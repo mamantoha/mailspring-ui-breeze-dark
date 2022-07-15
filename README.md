@@ -1,7 +1,6 @@
-# Mailspring Dark UI theme
+# Mailspring Breeze Dark Theme
 
-Default dark UI theme for Mailspring.
+**An Breeze Dark theme for [Mailspring](https://getmailspring.com). Created by [Anton Maminov](https://github.com/mamantoha)**
 
-This theme is installed by default with Mailspring and can be activated by going to
-the _Themes_ section in the Settings view (`cmd-,`) and selecting it from the
-_UI Themes_ drop-down menu.
+
+Open Mailspring and install the theme by going to `Edit > Install Theme...` and selecting the directory.

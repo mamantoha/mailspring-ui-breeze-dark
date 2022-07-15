@@ -1,4 +1,4 @@
-@import 'base/ui-variables';
+@import "base/ui-variables";
 
 @gray-base: #ffffff;
 @gray-darker: darken(@gray-base, 13.5%);
@@ -8,12 +8,14 @@
 @gray-lighter: darken(@gray-base, 92.5%);
 @white: #0a0a0a;
 
-@accent-primary: #58b660;
+@accent-primary: #3cabe5;
 @accent-primary-dark: darken(@accent-primary, 10%);
 
-@background-primary: #212121;
-@background-off-primary: #212121;
-@background-secondary: #121212;
+@sidebar: @accent-primary;
+
+@background-primary: #2a2e32;
+@background-off-primary: #2a2e32;
+@background-secondary: #2a2e32;
 @background-tertiary: #6d7987;
 
 @border-color-primary: lighten(@background-primary, 10%);
@@ -34,18 +36,20 @@
 @text-color-link-active: @accent-primary-dark;
 
 @btn-default-bg-color: lighten(@background-primary, 5%);
-@dropdown-default-bg-color: #404040;
+@dropdown-default-bg-color: #31363b;
 
-@input-bg: #2e2e2e;
+@input-bg: #1b1e20;
 @input-border: @border-color-divider;
 
-@list-bg: #333;
+@list-bg: #2a2e32;
 @list-border: #383838;
 @list-selected-color: @text-color-inverse;
 @list-focused-color: @text-color;
 
-@toolbar-background-color: #121212;
-@panel-background-color: #121212;
+@toolbar-background-color: #2a2e32;
+@panel-background-color: #2a2e32;
+
+@sidebar-margin: 15px;
 
 .sheet-toolbar {
   border-bottom: 1px solid @border-color-divider;
@@ -67,7 +71,8 @@ img.content-light {
 }
 
 #message-list .message-item-wrap .message-item-white-wrap {
-  box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28), 0 1px 1.5px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28),
+    0 1px 1.5px rgba(255, 255, 255, 0.08);
 }
 
 .thread-list .list-item:not(.unread):not(.selected):not(.focused) {
@@ -89,4 +94,51 @@ img.content-light {
   color: #7d5bef;
   background: #312856;
   border-bottom: 1px solid #4d3b8a;
+}
+
+//====================================================
+//  Scrollbar Base & Sidebar Scrollbar
+//====================================================
+
+.scrollbar-track {
+  background: transparent;
+  border-left: none;
+  width: 15px;
+}
+
+// transitioning background instead of opacity
+// so the location tooltip isn't affected
+.scrollbar-track .scrollbar-handle {
+  background: fade(@sidebar, 20%);
+  border: none !important;
+  cursor: -webkit-grab;
+  transition: background 300ms;
+}
+
+.scrollbar-track.dragging .scrollbar-handle {
+  background: fade(@sidebar, 50%);
+  cursor: -webkit-grabbing;
+}
+
+.sheet-toolbar .btn.btn-toolbar {
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.sheet-toolbar .btn-toolbar img.content-mask {
+  &:hover {
+    background-color: @accent-primary;
+  }
+}
+
+.button-dropdown.bordered {
+  .secondary-items {
+    .item {
+      color: @text-color !important;
+      &:hover {
+        background-color: @accent-primary;
+      }
+    }
+  }
 }
