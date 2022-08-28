@@ -6,7 +6,10 @@
   img {
     filter: invert(100%) hue-rotate(180deg);
   }
-  div[style*="background-image: url"] {
+  *[style*="background-image: url"] {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+  *[background] {
     filter: invert(100%) hue-rotate(180deg);
   }
 }
